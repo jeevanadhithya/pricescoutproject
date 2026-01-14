@@ -23,6 +23,10 @@ export const PriceCard = ({ store, rank, lowestPrice }: PriceCardProps) => {
     ? Math.round((savings / store.originalPrice) * 100) 
     : 0;
 
+  const formatPrice = (price: number) => {
+    return price.toLocaleString('en-IN');
+  };
+
   return (
     <div 
       className={cn(
@@ -99,11 +103,11 @@ export const PriceCard = ({ store, rank, lowestPrice }: PriceCardProps) => {
               "font-display font-bold text-2xl",
               isLowest ? "gradient-text" : "text-foreground"
             )}>
-              ${store.price.toFixed(2)}
+              ₹{formatPrice(store.price)}
             </span>
             {store.originalPrice && (
               <span className="text-muted-foreground line-through text-sm">
-                ${store.originalPrice.toFixed(2)}
+                ₹{formatPrice(store.originalPrice)}
               </span>
             )}
           </div>
@@ -128,7 +132,7 @@ export const PriceCard = ({ store, rank, lowestPrice }: PriceCardProps) => {
               : "bg-secondary text-foreground hover:bg-secondary/80 hover:scale-105"
           )}
         >
-          Visit
+          Visit Store
           <ExternalLink className="w-4 h-4" />
         </a>
       </div>

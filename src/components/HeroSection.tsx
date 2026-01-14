@@ -31,26 +31,26 @@ export const HeroSection = () => {
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8 animate-slide-up">
           <Zap className="w-4 h-4 text-primary" />
-          <span className="text-sm font-medium text-foreground">Compare prices across 12+ trusted retailers</span>
+          <span className="text-sm font-medium text-foreground">Compare prices across 12+ Indian retailers</span>
         </div>
 
         <h1 className="font-display font-bold text-5xl md:text-7xl leading-tight mb-6 animate-slide-up-delay-1">
           Find the{" "}
           <span className="gradient-text">Best Deals</span>
           <br />
-          in Seconds
+          in India
         </h1>
 
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-12 animate-slide-up-delay-2">
-          Stop wasting time checking multiple websites. We scan all major retailers 
-          and show you the lowest prices, ranked from cheapest to most expensive.
+          Stop wasting time checking Amazon, Flipkart, Croma separately. We scan all major 
+          Indian retailers and show you the lowest prices in INR.
         </p>
 
         {/* Trust Badges */}
         <div className="flex items-center justify-center gap-8 flex-wrap animate-slide-up-delay-3">
           <div className="flex items-center gap-2 text-muted-foreground">
             <Shield className="w-5 h-5 text-primary" />
-            <span className="text-sm">Verified Retailers</span>
+            <span className="text-sm">Trusted Retailers</span>
           </div>
           <div className="flex items-center gap-2 text-muted-foreground">
             <Zap className="w-5 h-5 text-primary" />
@@ -58,7 +58,7 @@ export const HeroSection = () => {
           </div>
           <div className="flex items-center gap-2 text-muted-foreground">
             <TrendingDown className="w-5 h-5 text-primary" />
-            <span className="text-sm">Price Alerts</span>
+            <span className="text-sm">Save in ₹</span>
           </div>
         </div>
       </div>

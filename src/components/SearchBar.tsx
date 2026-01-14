@@ -44,7 +44,7 @@ export const SearchBar = ({ onSearch, isLoading = false }: SearchBarProps) => {
           onChange={(e) => setQuery(e.target.value)}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
-          placeholder="Search any product... iPhone, MacBook, PlayStation..."
+          placeholder="Search any product... iPhone, Samsung, OnePlus..."
           className={cn(
             "w-full py-5 pl-14 pr-36 bg-transparent text-lg font-medium",
             "placeholder:text-muted-foreground/60 outline-none",
@@ -75,7 +75,7 @@ export const SearchBar = ({ onSearch, isLoading = false }: SearchBarProps) => {
       </div>
       
       <p className="mt-4 text-center text-muted-foreground text-sm">
-        Compare prices across 10+ trusted retailers instantly
+        Compare prices across 12+ Indian retailers like Amazon, Flipkart, Croma & more
       </p>
     </form>
   );
