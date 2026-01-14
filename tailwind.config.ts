@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        display: ['Space Grotesk', 'sans-serif'],
+        body: ['Inter', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,28 +61,41 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        teal: {
+          400: "hsl(175 80% 50%)",
+          500: "hsl(175 80% 45%)",
+          600: "hsl(175 80% 40%)",
+        },
+        purple: {
+          400: "hsl(280 85% 65%)",
+          500: "hsl(280 85% 55%)",
+        },
+        orange: {
+          400: "hsl(35 95% 55%)",
+          500: "hsl(25 90% 50%)",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        "2xl": "1.5rem",
+        "3xl": "2rem",
+      },
+      boxShadow: {
+        'glow': '0 0 40px hsla(175, 80%, 50%, 0.3)',
+        'glow-lg': '0 0 60px hsla(175, 80%, 50%, 0.4)',
+        '3d': '0 20px 60px rgba(0, 0, 0, 0.5)',
+        'card': '0 8px 32px rgba(0, 0, 0, 0.4)',
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
       animation: {
