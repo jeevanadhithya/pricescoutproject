@@ -22,7 +22,7 @@ interface ProductResultsProps {
 // Indian retailers with real search URLs
 const generateStoreData = (query: string): StoreData[] => {
   const encodedQuery = encodeURIComponent(query);
-  const basePrice = Math.random() * 50000 + 10000; // Base price in INR
+  const basePrice = Math.random() * 50000 + 10000;
   
   const stores = [
     { 
@@ -133,14 +133,14 @@ export const ProductResults = ({ query, isLoading }: ProductResultsProps) => {
 
   if (isLoading) {
     return (
-      <div className="mt-16 flex flex-col items-center gap-6">
+      <div className="mt-12 md:mt-16 flex flex-col items-center gap-4 md:gap-6 px-4">
         <div className="relative">
-          <div className="w-20 h-20 rounded-full border-4 border-primary/20 border-t-primary animate-spin" />
+          <div className="w-16 h-16 md:w-20 md:h-20 rounded-full border-4 border-primary/20 border-t-primary animate-spin" />
           <div className="absolute inset-0 flex items-center justify-center">
-            <Package className="w-8 h-8 text-primary animate-pulse" />
+            <Package className="w-6 h-6 md:w-8 md:h-8 text-primary animate-pulse" />
           </div>
         </div>
-        <p className="text-muted-foreground text-lg">Scanning 12 Indian retailers for best prices...</p>
+        <p className="text-muted-foreground text-sm md:text-lg text-center">Scanning 12 Indian retailers for best prices...</p>
       </div>
     );
   }
@@ -152,46 +152,53 @@ export const ProductResults = ({ query, isLoading }: ProductResultsProps) => {
   const savings = highestPrice - lowestPrice;
 
   return (
-    <div className="mt-16 animate-slide-up">
+    <div className="mt-10 md:mt-16 animate-slide-up px-4 md:px-0">
       {/* Stats Bar */}
-      <div className="glass-card rounded-2xl p-6 mb-8">
-        <div className="flex items-center justify-between flex-wrap gap-6">
-          <div className="flex items-center gap-4">
-            <Icon3D icon={Package} size="md" variant="primary" animated={false} />
+      <div className="glass-card rounded-2xl p-4 md:p-6 mb-6 md:mb-8">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6">
+          {/* Product Info */}
+          <div className="flex items-center gap-3 md:gap-4">
+            <div className="hidden md:block">
+              <Icon3D icon={Package} size="md" variant="primary" animated={false} />
+            </div>
+            <div className="md:hidden w-10 h-10 rounded-lg bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center">
+              <Package className="w-5 h-5 text-primary-foreground" />
+            </div>
             <div>
-              <p className="text-muted-foreground text-sm">Searching for</p>
-              <h2 className="font-display font-bold text-xl text-foreground capitalize">{query}</h2>
+              <p className="text-muted-foreground text-xs md:text-sm">Searching for</p>
+              <h2 className="font-display font-bold text-lg md:text-xl text-foreground capitalize">{query}</h2>
             </div>
           </div>
           
-          <div className="flex items-center gap-8">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center">
-                <Store className="w-6 h-6 text-primary" />
+          {/* Stats */}
+          <div className="grid grid-cols-3 gap-3 md:flex md:items-center md:gap-8">
+            <div className="flex items-center gap-2 md:gap-3">
+              <div className="w-9 h-9 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-secondary flex items-center justify-center">
+                <Store className="w-4 h-4 md:w-6 md:h-6 text-primary" />
               </div>
               <div>
-                <p className="text-2xl font-display font-bold text-foreground">{stores.length}</p>
-                <p className="text-muted-foreground text-sm">Stores</p>
+                <p className="text-lg md:text-2xl font-display font-bold text-foreground">{stores.length}</p>
+                <p className="text-muted-foreground text-xs md:text-sm">Stores</p>
               </div>
             </div>
             
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center">
-                <TrendingDown className="w-6 h-6 text-primary" />
+            <div className="flex items-center gap-2 md:gap-3">
+              <div className="w-9 h-9 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-secondary flex items-center justify-center">
+                <TrendingDown className="w-4 h-4 md:w-6 md:h-6 text-primary" />
               </div>
               <div>
-                <p className="text-2xl font-display font-bold gradient-text">₹{savings.toLocaleString('en-IN')}</p>
-                <p className="text-muted-foreground text-sm">Max Savings</p>
+                <p className="text-lg md:text-2xl font-display font-bold gradient-text">₹{savings.toLocaleString('en-IN')}</p>
+                <p className="text-muted-foreground text-xs md:text-sm">Savings</p>
               </div>
             </div>
             
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center">
-                <Clock className="w-6 h-6 text-primary" />
+            <div className="flex items-center gap-2 md:gap-3">
+              <div className="w-9 h-9 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-secondary flex items-center justify-center">
+                <Clock className="w-4 h-4 md:w-6 md:h-6 text-primary" />
               </div>
               <div>
-                <p className="text-muted-foreground text-sm">Updated</p>
-                <p className="text-foreground font-medium">Just now</p>
+                <p className="text-muted-foreground text-xs md:text-sm">Updated</p>
+                <p className="text-foreground font-medium text-sm md:text-base">Just now</p>
               </div>
             </div>
           </div>
@@ -199,7 +206,7 @@ export const ProductResults = ({ query, isLoading }: ProductResultsProps) => {
       </div>
 
       {/* Price Cards */}
-      <div className="space-y-4">
+      <div className="space-y-3 md:space-y-4">
         {stores.map((store, index) => (
           <div 
             key={store.name} 
