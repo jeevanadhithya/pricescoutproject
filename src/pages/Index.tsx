@@ -24,10 +24,10 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <main className="container mx-auto px-6">
+      <main className="container mx-auto px-0 md:px-6">
         <HeroSection />
         
-        <div className="relative z-10 -mt-4">
+        <div className="relative z-10 -mt-2 md:-mt-4">
           <SearchBar onSearch={handleSearch} isLoading={isLoading} />
         </div>
 
@@ -38,9 +38,9 @@ const Index = () => {
         )}
 
         {/* Footer */}
-        <footer className="py-12 mt-20 border-t border-border text-center">
-          <p className="text-muted-foreground text-sm">
-            © 2024 PriceScout. Compare prices from trusted retailers worldwide.
+        <footer className="py-8 md:py-12 mt-12 md:mt-20 border-t border-border text-center px-4">
+          <p className="text-muted-foreground text-xs md:text-sm">
+            © 2024 PriceScout. Compare prices from trusted Indian retailers.
           </p>
         </footer>
       </main>
